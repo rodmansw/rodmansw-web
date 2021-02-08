@@ -15,7 +15,7 @@ export default function Container(props) {
   const meta = {
     title: 'Rodman Swanston – Developer and Tech Enthusiast.',
     description: `I’m a developer and Tech Enthusiast. For me being self-taught and keeping abreast of new technologies is essential.`,
-    image: 'https://rodmansw.com/static/images/og.png',
+    image: 'https://rodmansw.com/static/images/og.jpg',
     type: 'website',
     ...customMeta
   }
