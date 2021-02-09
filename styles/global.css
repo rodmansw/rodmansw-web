@@ -37,12 +37,50 @@ html {
   transition: background-color 0.1 ease-in-out;
 }
 
+:root {
+  --pre-color: #403f53;
+  --bg-pre-color: #fbfbfb;
+  --pre-string: rgb(39, 84, 175);
+  --pre-changed: rgb(162, 191, 252);
+  --pre-deleted: rgba(239, 83, 80, 0.56);
+  --pre-comment: rgb(152, 159, 177);
+  --pre-variable: rgb(201, 103, 101);
+  --pre-number: rgb(170, 9, 130);
+  --pre-punctuation: rgb(153, 76, 195);
+  --pre-class-name: rgb(17, 17, 17);
+  --pre-boolean: rgb(150, 59, 59);
+  --pre-operator: rgb(12, 94, 100);
+}
+
+html.dark {
+  --pre-color: #d6deeb;
+  --bg-pre-color: #011627;
+  --pre-string: rgb(173, 219, 103);
+  --pre-changed: rgb(162, 191, 252);
+  --pre-deleted: rgba(239, 83, 80, 0.56);
+  --pre-comment: rgb(99, 119, 119);
+  --pre-variable: rgb(214, 222, 235);
+  --pre-number: rgb(247, 140, 108);
+  --pre-punctuation: rgb(199, 146, 234);
+  --pre-class-name: rgb(255, 203, 139);
+  --pre-boolean: rgb(255, 88, 116);
+  --pre-operator: rgb(127, 219, 202);
+}
+
 .prose pre {
-  @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
+  @apply border border-gray-700;
+  color: var(--pre-color);
+  background-color: var(--bg-pre-color);
 }
 
 .prose code {
-  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-300 dark:bg-gray-900;
+}
+
+.prose code[class*='language-'],
+.prose pre[class*='language-'] {
+  color: var(--pre-color);
+  background-color: var(--bg-pre-color);
 }
 
 .prose code::before {
@@ -58,64 +96,83 @@ html {
   @apply m-0;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  @apply text-gray-700 dark:text-gray-300;
+.token.changed {
+  color: var(--pre-changed);
+  font-style: italic;
 }
 
-.token.punctuation {
-  @apply text-gray-700 dark:text-gray-300;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
 .token.deleted {
-  @apply text-green-500;
+  color: var(--pre-deleted);
+  font-style: italic;
 }
 
-.token.selector,
-.token.attr-name,
+.token.comment {
+  color: var(--pre-comment);
+  font-style: italic;
+}
+
+.token.variable {
+  color: var(--pre-variable);
+}
+
+.token.number {
+  color: var(--pre-number);
+}
+
+.token.class-name {
+  color: var(--pre-class-name);
+}
+
+.token.boolean {
+  color: var(--pre-boolean);
+}
+
+.token.punctuation,
+.token.tag {
+  color: var(--pre-punctuation);
+}
+
+.token.inserted,
+.token.attr-name {
+  color: var(--pre-string);
+  font-style: italic;
+}
+
 .token.string,
-.token.char,
 .token.builtin,
-.token.inserted {
-  @apply text-purple-500;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  @apply text-yellow-500;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  @apply text-blue-500;
+.token.char,
+.token.constant,
+.token.url {
+  color: var(--pre-string);
 }
 
 .token.function,
-.token.class-name {
-  @apply text-pink-500;
+.token.selector,
+.token.doctype {
+  color: var(--pre-punctuation);
+  font-style: italic;
 }
 
-.token.regex,
-.token.important,
-.token.variable {
-  @apply text-yellow-500;
+.token.operator,
+.token.property,
+.token.keyword,
+.token.namespace {
+  color: var(--pre-operator);
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
-  @apply text-gray-800 dark:text-gray-50;
+.dark .token.builtin,
+.dark .token.char,
+.dark .token.constant,
+.dark .token.function {
+  color: rgb(130, 170, 255);
+}
+
+.dark .token.property {
+  color: rgb(128, 203, 196);
+}
+
+.dark .token.namespace {
+  color: rgb(178, 204, 214);
 }
 
 pre::-webkit-scrollbar {

@@ -9,9 +9,9 @@ const BlogPost = ({ title, summary, slug, publishedAt, tags }) => {
         <a className="w-full">
           <div className="w-full border border-gray-600 rounded p-4">
             <div className="flex flex-col">
-              <h4 className="text-lg md:text-xl font-medium mb-2 w-full text-gray-900 dark:text-gray-100">
+              <h3 className="text-lg md:text-xl font-medium mb-2 w-full text-gray-900 dark:text-gray-100">
                 {title}
-              </h4>
+              </h3>
               <div className="flex flex-col md:flex-row items-start">
                 <p className="text-gray-600 dark:text-gray-300 text-left mb-2 mr-4">
                   {format(parseISO(publishedAt), 'MMMM dd, yyyy')}

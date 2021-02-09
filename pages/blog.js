@@ -68,16 +68,16 @@ export default function Blog({ posts, tags }) {
           {tag && <SearchTag tag={tag} setTag={setTag} />}
         </div>
 
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight my-8 text-black dark:text-white">
+        <h2 className="font-bold text-2xl md:text-4xl tracking-tight my-8 text-black dark:text-white">
           Tags
-        </h3>
+        </h2>
         <div className="w-full mb-4">
           <Tags tags={tags} large />
         </div>
 
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight my-8 text-black dark:text-white">
+        <h2 className="font-bold text-2xl md:text-4xl tracking-tight my-8 text-black dark:text-white">
           All Posts
-        </h3>
+        </h2>
         {!filteredBlogPosts.length && (
           <p className="text-black dark:text-white">No posts found.</p>
         )}

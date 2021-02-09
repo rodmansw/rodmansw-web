@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import Container from '@/components/Container'
 import Timeline from '@/components/Timeline'
 

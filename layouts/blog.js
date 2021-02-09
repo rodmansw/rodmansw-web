@@ -41,7 +41,7 @@ export default function BlogLayout({ children, frontMatter }) {
             </p>
           </div>
           <div className="flex flex-row">
-            <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0 mr-2">
+            <p className="text-sm text-gray-700 dark:text-gray-300 min-w-32 mt-2 md:mt-0 mr-2">
               {frontMatter.readingTime.text}
             </p>
             <div className="mt-2 md:mt-0">
